@@ -8,10 +8,7 @@ namespace _Workdata.Scripts
         [SerializeField]private Rigidbody2D cheeseRb;
         [SerializeField]private Rigidbody2D slingRb;
         [SerializeField]private bool isDragging;
-        private readonly float _maxDragDistance = 2.2f;
-    
-        [SerializeField]private SpriteRenderer sr;
-        [SerializeField]private Sprite[] sprites;
+        [SerializeField]private float maxDragDistance = 3.3f;
     
         [SerializeField]private LineRenderer[] lineRenderers;
         [SerializeField]private Transform[] slingPositions;
@@ -22,8 +19,6 @@ namespace _Workdata.Scripts
     
         void Start()
         {
-            lineRenderers[0].positionCount = 2;
-            lineRenderers[1].positionCount = 2;
             lineRenderers[0].SetPosition(0, slingPositions[0].position);
             lineRenderers[1].SetPosition(0, slingPositions[1].position);
             SetSling(defaultPosition.position);
@@ -31,6 +26,7 @@ namespace _Workdata.Scripts
         
         private void SetSling(Vector2 position)
         {
+            
             lineRenderers[0].SetPosition(1, position);
             lineRenderers[1].SetPosition(1, position);
         }
@@ -42,17 +38,17 @@ namespace _Workdata.Scripts
                 Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     
                 // if distance is bigger then maxDragDistance
-                if(Vector3.Distance(mousePos, slingRb.position) > _maxDragDistance)
+                if(Vector3.Distance(mousePos, slingRb.position) > maxDragDistance)
                 {
-                    cheeseRb.position = slingRb.position + (mousePos - slingRb.position).normalized * _maxDragDistance;
+                    cheeseRb.position = slingRb.position + (mousePos - slingRb.position).normalized * maxDragDistance;
                     
-                    SetSling(slingRb.position + (mousePos - slingRb.position).normalized * 2.6f);
+                    SetSling(slingRb.position + (mousePos - slingRb.position).normalized * (maxDragDistance +3f));
                 }
                 else
                 {
                     cheeseRb.position = mousePos;
                     
-                    SetSling(mousePos + (mousePos - slingRb.position).normalized * 0.4f);
+                    SetSling(mousePos + (mousePos - slingRb.position).normalized * 2.2f);
                 }
                 
             }
@@ -63,26 +59,27 @@ namespace _Workdata.Scripts
         }
     
         
-        private void OnHolding()
+        private void OnMouseDown()
         {
             isDragging = true;
             cheeseRb.bodyType = RigidbodyType2D.Kinematic;
+            Debug.Log("mouseDown");
         }
         
-        private void OnStopHolding()
+        private void OnMouseUp()
         {
             isDragging = false;
             cheeseRb.bodyType =  RigidbodyType2D.Dynamic;
             StartCoroutine(nameof(StartFlying));
+            Debug.Log("mouseUp");
         }
     
         private IEnumerator StartFlying()
         {
             yield return new WaitForSeconds(0.2f);
             
-            //TODO:GetComponent<SlingJoint2D>().enabled = false;
-    
-            // cheese can rotate again
+            GetComponent<SpringJoint2D>().enabled = false;
+            
             cheeseRb.constraints = RigidbodyConstraints2D.None;
             
             enabled = false;
@@ -98,12 +95,12 @@ namespace _Workdata.Scripts
                 lastCheese = true;
             }
             
-            StartCoroutine(nameof(DeleteBirds));
+            StartCoroutine(nameof(DeleteCheese));
         }
     
-        private IEnumerator DeleteBirds()
+        private IEnumerator DeleteCheese()
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(10);
             Destroy(gameObject);
             
             if(lastCheese)
