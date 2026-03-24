@@ -63,6 +63,7 @@ namespace _Workdata.Scripts
         {
             isDragging = true;
             cheeseRb.bodyType = RigidbodyType2D.Kinematic;
+            Debug.Log("MouseDown");
         }
         
         private void OnMouseUp()
@@ -70,6 +71,7 @@ namespace _Workdata.Scripts
             isDragging = false;
             cheeseRb.bodyType =  RigidbodyType2D.Dynamic;
             StartCoroutine(nameof(StartFlying));
+            Debug.Log("MouseUp");
         }
     
         private IEnumerator StartFlying()
