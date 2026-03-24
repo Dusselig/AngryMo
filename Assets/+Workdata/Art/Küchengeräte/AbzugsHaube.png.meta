@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 304258ce4abe31141bfcdc2fcb20dfe7
+guid: b31dd52932f846a45bda92a347c70074
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4807277527210597146
-    second: AbzugsHaubeV2_0
+      213: 1282836424242725723
+    second: AbzugsHaube_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AbzugsHaubeV2_0
+      name: AbzugsHaube_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 552
-        height: 291
+        y: 4
+        width: 271
+        height: 165
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1b1b12e071e6b240800000000000000
-      internalID: 4807277527210597146
+      spriteID: b538beb5eec8dc110800000000000000
+      internalID: 1282836424242725723
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AbzugsHaubeV2_0: 4807277527210597146
+      AbzugsHaube_0: 1282836424242725723
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
