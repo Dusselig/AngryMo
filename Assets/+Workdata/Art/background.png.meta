@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 2ee976fb2026d8048b353307212f3629
+guid: 03b9986c7ab4f52489967712a013acb4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9163751244195289467
-    second: Happy_BOBA_0
-  - first:
-      213: -5438088048307322741
-    second: Happy_BOBA_1
-  - first:
-      213: 6347360677870656901
-    second: Happy_BOBA_2
+      213: -7443756053782179069
+    second: background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -132,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Happy_BOBA_0
+      name: background_0
       rect:
         serializedVersion: 2
-        x: 1583
-        y: 516
-        width: 33
-        height: 38
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,52 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 58622b78bc0d3d080800000000000000
-      internalID: -9163751244195289467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Happy_BOBA_1
-      rect:
-        serializedVersion: 2
-        x: 1643
-        y: 546
-        width: 50
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b8048577bb70884b0800000000000000
-      internalID: -5438088048307322741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Happy_BOBA_2
-      rect:
-        serializedVersion: 2
-        x: 912
-        y: 89
-        width: 854
-        height: 432
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 58d53c128ea561850800000000000000
-      internalID: 6347360677870656901
+      spriteID: 30356abce4772b890800000000000000
+      internalID: -7443756053782179069
       vertices: []
       indices: 
       edges: []
@@ -211,9 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Happy_BOBA_0: -9163751244195289467
-      Happy_BOBA_1: -5438088048307322741
-      Happy_BOBA_2: 6347360677870656901
+      background_0: -7443756053782179069
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
