@@ -63,7 +63,7 @@ namespace _Workdata.Scripts
         {
             isDragging = true;
             cheeseRb.bodyType = RigidbodyType2D.Kinematic;
-            Debug.Log("mouseDown");
+            Debug.Log("MouseDown");
         }
         
         private void OnMouseUp()
@@ -71,7 +71,7 @@ namespace _Workdata.Scripts
             isDragging = false;
             cheeseRb.bodyType =  RigidbodyType2D.Dynamic;
             StartCoroutine(nameof(StartFlying));
-            Debug.Log("mouseUp");
+            Debug.Log("MouseUp");
         }
     
         private IEnumerator StartFlying()
@@ -84,7 +84,7 @@ namespace _Workdata.Scripts
             
             enabled = false;
             
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2.0f);
             
             if(nextCheesePrefab != null)
             {
@@ -94,7 +94,10 @@ namespace _Workdata.Scripts
             {
                 lastCheese = true;
             }
-            
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
             StartCoroutine(nameof(DeleteCheese));
         }
     
@@ -105,12 +108,10 @@ namespace _Workdata.Scripts
             
             if(lastCheese)
             {
-                /*TODO:GameManager gm = FindObjectOfType<GameManager>();
-    
-                if(gm.gameIsOver == false)
+                if (GameManager.Instance.gameIsOver == false)
                 {
-                    gm.GameOver();
-                }//*/
+                    GameManager.Instance.GameIsOver();
+                }
             }
         }
     }
