@@ -17,7 +17,7 @@ namespace _Workdata.Scripts
                 Destroy(this);
             }
         }
-        
+        [SerializeField] private SpriteRenderer waterSprite;
         public int poisonCounter = 0;
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -37,6 +37,19 @@ namespace _Workdata.Scripts
             {
                 poisonCounter++;
                 Destroy(other.gameObject);
+            }
+
+            if (poisonCounter < 2)
+            {
+                waterSprite.color = Color.white;
+            }
+            else if  (poisonCounter == 2)
+            {
+                waterSprite.color = Color.mediumSeaGreen;
+            }
+            else if (poisonCounter <= 3)
+            {
+                waterSprite.color = Color.blueViolet;
             }
         }
     }
