@@ -94,7 +94,10 @@ namespace _Workdata.Scripts
             {
                 lastCheese = true;
             }
-            
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
             StartCoroutine(nameof(DeleteCheese));
         }
     
@@ -105,12 +108,10 @@ namespace _Workdata.Scripts
             
             if(lastCheese)
             {
-                /*TODO:GameManager gm = FindObjectOfType<GameManager>();
-    
-                if(gm.gameIsOver == false)
+                if (GameManager.Instance == false)
                 {
-                    gm.GameOver();
-                }//*/
+                    GameManager.Instance.GameIsOver();
+                }
             }
         }
     }

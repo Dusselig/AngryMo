@@ -170,9 +170,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0.02
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 15328d265748cda42a633329617af8a4, type: 2}
   m_IncludeLayers:
@@ -860,7 +860,7 @@ MonoBehaviour:
   cheeseRb: {fileID: 149617629279669069}
   slingRb: {fileID: 8197373094479752742}
   isDragging: 0
-  maxDragDistance: 3.3
+  maxDragDistance: 5
   lineRenderers:
   - {fileID: 0}
   - {fileID: 0}
