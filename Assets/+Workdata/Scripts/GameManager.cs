@@ -18,6 +18,10 @@ namespace _Workdata.Scripts
             }
         }
 
+        [SerializeField]private GameObject winPanel;
+        [SerializeField]private GameObject losePanel;
+
+
         public void GameIsOver()
         {
             gameIsOver = true;
