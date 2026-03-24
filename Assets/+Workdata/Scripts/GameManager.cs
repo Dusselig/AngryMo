@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Workdata.Scripts
 {
@@ -35,9 +36,16 @@ namespace _Workdata.Scripts
             }
         }
 
+        public void MainMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
         public void Restart()
         {
-            
+            winPanel.SetActive(false);
+            losePanel.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
     
