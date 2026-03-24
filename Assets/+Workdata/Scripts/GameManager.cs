@@ -27,13 +27,19 @@ namespace _Workdata.Scripts
             gameIsOver = true;
             if (PotCheck.Instance.poisonCounter >= 3)
             {
-                Debug.Log("win");
+                winPanel.SetActive(true);
             }
             else 
             {
-                Debug.Log("lose");
+                losePanel.SetActive(true);
             }
         }
+
+        public void Restart()
+        {
+            
+        }
+        
     
     }
 }
