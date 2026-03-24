@@ -14,10 +14,11 @@ namespace _Workdata.Scripts
             }
             else
             {
-                if (collision.gameObject.CompareTag("Player"))
+                if (collision.gameObject.CompareTag("Player")||collision.gameObject.CompareTag("Wood"))
                 {
                     Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
                     rb.bodyType = RigidbodyType2D.Dynamic;
+                    rb.gravityScale = 2;
                 }
             }
         }
