@@ -4,7 +4,7 @@ namespace _Workdata.Scripts
 {
     public class GameManager : MonoBehaviour
     {
-        private bool _gameIsOver;
+        public bool gameIsOver;
         public static GameManager Instance;
         private void Awake()
         {
@@ -20,8 +20,15 @@ namespace _Workdata.Scripts
 
         public void GameIsOver()
         {
-            _gameIsOver = true;
-            Debug.Log("Game Over");
+            gameIsOver = true;
+            if (PotCheck.Instance.poisonCounter >= 3)
+            {
+                Debug.Log("win");
+            }
+            else 
+            {
+                Debug.Log("lose");
+            }
         }
     
     }
